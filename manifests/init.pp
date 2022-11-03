@@ -19,6 +19,7 @@ class login_cgroups (
       '[Slice]'],
       $cpu_settings), "\n"),
     notify_service => false,
+    daemon_reload => true,
   }
 
   systemd::dropin_file { '50-memory.conf':
@@ -29,6 +30,7 @@ class login_cgroups (
       '[Slice]'],
       $memory_settings), "\n"),
     notify_service => false,
+    daemon_reload => true,
   }
 
 }
